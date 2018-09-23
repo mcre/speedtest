@@ -52,6 +52,7 @@ header('Content-Type: text/html; charset=utf-8');
 </head>
 <body>
 <h1>HTML5 Speedtest - Stats</h1>
+<div><a href="../">back</a></div>
 <?php
 include_once("telemetry_settings.php");
 if($stats_password=="PASSWORD"){
@@ -128,7 +129,8 @@ if($stats_password=="PASSWORD"){
 	?>
 		<table>
 			<tr><th>Test ID</th><td><?=htmlspecialchars($id, ENT_HTML5, 'UTF-8') ?></td></tr>
-			<tr><th>Date and time</th><td><?=htmlspecialchars($timestamp, ENT_HTML5, 'UTF-8') ?></td></tr>
+			<?php date_default_timezone_set('UTC'); $timestamp_tz = new DateTime($timestamp); $timestamp_tz->setTimezone(new DateTimeZone('Asia/Tokyo'));?>
+			<tr><th>Date and time</th><td><?=htmlspecialchars($timestamp_tz->format("Y-m-d H:i:s T"), ENT_HTML5, 'UTF-8') ?></td></tr>
 			<tr><th>IP and ISP Info</th><td><?=$ip ?><br/><?=htmlspecialchars($ispinfo, ENT_HTML5, 'UTF-8') ?></td></tr>
 			<tr><th>User agent and locale</th><td><?=$ua ?><br/><?=htmlspecialchars($lang, ENT_HTML5, 'UTF-8') ?></td></tr>
 			<tr><th>Download speed</th><td><?=htmlspecialchars($dl, ENT_HTML5, 'UTF-8') ?></td></tr>
