@@ -7,6 +7,7 @@ header('Content-Type: text/html; charset=utf-8');
 <html>
 <head>
 <title>HTML5 Speedtest - Stats</title>
+<link rel="icon" href="./../favicon.ico">
 <style type="text/css">
 	html,body{
 		margin:0;
