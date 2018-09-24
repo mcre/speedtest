@@ -13,6 +13,8 @@ For details of change, see `git log`.
 cd ~
 git clone https://github.com/mcre/speedtest.git
 cd speedtest
+mkdir -p ./telemetry/sqlite
+chmod 777 ./telemetry/sqlite
 docker-compose build
 docker-compose up -d
 docker-compose exec speedtest bash
