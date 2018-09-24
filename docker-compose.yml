@@ -3,9 +3,10 @@ version: "3"
 services:
   speedtest:
     build: .
-    image: adolfintel/speedtest:${TAG:-latest}
+    image: mcre/speedtest:${TAG:-latest}
     ports:
       - "8082:80"
+      - "4433:443"
     volumes:
       - .:/var/www/html
     environment:

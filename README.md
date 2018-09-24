@@ -2,7 +2,7 @@
 
 This is a forked software from [adolfintel/speedtest](https://github.com/adolfintel/speedtest).
 I changed it to record the location information of the terminal.
-Also, I deleted unnecessary parts and changed a few parameters.
+Also, I deleted unnecessary parts, changed a few parameters, and enabled HTTPS.
 For details of change, see `git log`.
 
 ## License
