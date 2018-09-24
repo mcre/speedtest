@@ -9,5 +9,7 @@ RUN \
     apt-get update && \
     apt-get install -y sqlite3 && \
     a2enmod ssl && \
-    a2ensite ssl
+    a2ensite ssl && \
+    mkdir -p /var/www/html/telemetry/sqlite && \
+    chmod 777 /var/www/html/telemetry/sqlite
 CMD ["/usr/local/bin/apache2-foreground"]
