@@ -12,6 +12,7 @@ For details of change, see `git log`.
 ```
 cd ~
 git clone https://github.com/mcre/speedtest.git
+cd speedtest
 docker-compose build
 docker-compose up -d
 docker-compose exec speedtest bash
