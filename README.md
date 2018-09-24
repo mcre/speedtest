@@ -5,6 +5,26 @@ I changed it to record the location information of the terminal.
 Also, I deleted unnecessary parts, changed a few parameters, and enabled HTTPS.
 For details of change, see `git log`.
 
+## Usage
+
+* Self-signed certificate example at AWS EC 2
+
+```
+cd ~
+git clone https://github.com/mcre/speedtest.git
+docker-compose build
+docker-compose up -d
+docker-compose exec speedtest bash
+```
+
+```
+cd /etc/apache2/ssl
+openssl genrsa 2048 > server-key.pem
+openssl req -new -key server-key.pem > server.csr
+openssl x509 -days 3650 -req -signkey server-key.pem < server.csr > server.pem
+/etc/init.d/apache2 reload
+```
+
 ## License
 
 Copyright (C) 2018 m_cre
